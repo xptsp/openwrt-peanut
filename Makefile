@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=peanut
 PKG_VERSION:=1.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 PKG_LICENSE:=GPL-3.0-or-later
 
 include $(INCLUDE_DIR)/package.mk
@@ -12,10 +12,11 @@ define Package/peanut
 	CATEGORY:=Utilities
 	TITLE:=Peanut Script
 	PKGARCH:=all
+	DEPENDS:=+bash
 endef
 
 define Package/peanut/description
-Script to list all ports that the OS is listening on, sorted by IPv4 and IPv6.
+ Script to list all ports that the OS is listening on, sorted by IPv4 and IPv6, then port number (ascending).
 endef
 
 define Build/Prepare
